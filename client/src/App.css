@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", Helvetica, Arial,
+    sans-serif;
+}
+
+html {
+  --green: #81b29a;
+  --white: #f4f1de;
+}
+
+body {
+  background-color: #f4f1de;
+}
+
+::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  padding: 0 0.3rem 0 0.3rem;
+}
+
+input[type=radio]{
+  cursor:pointer;
+}
+
+.center{
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page{
+  padding: 1rem;
+}
+
+.page > *{
+  margin-bottom: 2rem;
+}
+
+.page button{
+    width: 100%;
+    background: var(--green);
+    border: none;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: black;
+    font-weight: 900;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+#facebookLogin{
+  margin-bottom: 1rem;
+  background: #3b5998;
+  color: white;
+}
+
+.signupForm input {
+    width: 100%;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    border: solid black 1.5px;
+}
+
+.signupForm > *, .createAccount > *, .title > * {
+ margin-bottom: 0.75rem;
+}
+
+/* Home Page */
+.marketing{
+  margin-top: 2rem;
+  border-left: black dashed 5px;
+  border-right:black dashed 5px;
+  border-bottom: grey solid 5px;
+  border-top: grey solid 5px;
+  padding: 1rem;
+  width: 100%;
+  height: 8rem;
+  background: #f9aa8f;
+  text-align: center;
+}
+
+/* Accordion */
+
+.accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.accordion-content {
+  background-color: #a9d9c199;
+}
+
+.accordion-content, .accordion-title {
+  padding: 1rem;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background: var(--green);
+  border: var(--white) solid 0.5px;
+}
+
+/* SizeChart Page */
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--green);
+  color: white;
+}
+
+.sizeChart{
+  background-color: black;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+
+.productContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1rem 0 1rem;
+  gap: 0.5rem;
+}
+
+.productImage{
+  width: 120px;
+}
+
+.productImage img{
+  object-fit: cover;
+  width: 100%;
+}
+
+#myOrders >*{
+  margin-bottom: 0.5rem
+}
+
+#myOrders h3 {
+  font-size: 1rem;
+}
+
+#track {
+  text-align: right;
+  font-size: 0.75rem;
+  color: orange;
+}
+
