@@ -7,12 +7,10 @@ import {Link} from 'react-router-dom'
 
 
 const TrainersId = () => {
-  const [size, setSize] = useState("4")
-  console.log(size)
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [size, setSize] = useState(4)
+  const [success, setSuccess] = useState(false);
   const [item, setItem] = useState([]);
   const {trainersId} = useParams()
-
   useEffect(() => {
     fetch('http://localhost:8626/trainers',
     {
@@ -21,17 +19,18 @@ const TrainersId = () => {
         "TrainersId": trainersId
       }
     })
-  .then(response => response.json())
-  .then(data => {
-    setItem(data.results)
-    setIsLoaded(true)
-  })
-  .catch(err => {
-    console.error(err);
-  });
-}, [trainersId]) 
+    .then(response => response.json())
+    .then(data => {
+      setItem(data.results)
+      setSuccess(!success)
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }, [trainersId, success, size]) 
+
   
-    if (!isLoaded) {
+    if (!success) {
       return <>loading...</>;
     }
     else if(item.length === 0){
@@ -60,22 +59,27 @@ const TrainersId = () => {
           </ProductInfo>
           <Choices>
             <hr></hr>
-            <label for="colours">Choose a colour:</label>
+            <label htmlFor="colours">Choose a colour:</label>
             <select name="colours" id="colours">
               <option value={item[0].colorway}>{item[0].colorway}</option>
             </select>
 
-            <label for="size">Select a size:</label>
+            <label htmlFor="size">Select a size:</label>
             <div>
               <select 
                   value={size}
-                  onChange={setSize(size)}
+                  selected={size}
+                  onChange={(e) => setSize(e.target.value)}
                   name="size" id="size">
                 <option value='4'>4</option>
                 <option value='5'>5</option>
                 <option value='6'>6</option>
+                <option value='7'>7</option>
               </select>
-              <span>8 Left</span>
+              { size === "4" || size === "7" ? <span>8 left</span> : 
+                size === "6"  ? <span>only 1 left in stock!</span> :
+                size === "5" ? <span>12 left</span>: 
+                null}
             </div>
             <Link to="/customerservice/sizechart">Size Guide</Link>
 

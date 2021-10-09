@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 const ImageWrapper = styled.div`
-
-  height: 50vh;
   background: white;
   padding: 2rem;
   display: flex;
